@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tradeai.securityservice.datamodel.Security;
+import com.tradeai.securityservice.dto.SecurityDTO;
 import com.tradeai.securityservice.response.SecurityResponse;
 import com.tradeai.securityservice.service.SecurityService;
 
@@ -35,7 +36,8 @@ public class SecurityController {
 	
 	private SecurityResponse getFromDB (String securityId) {
 		
-		Security secFromDb = service.getSecurity(securityId);
+		SecurityDTO secFromDb = service.getSecurity(securityId);
+		
 		SecurityResponse response = new SecurityResponse();
 		response.setSecurityId(secFromDb.getSecurityId());
 		response.setSecurityName(secFromDb.getSecurityName());

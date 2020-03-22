@@ -2,11 +2,13 @@ package com.tradeai.securityservice.service;
 
 import java.util.Optional;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tradeai.securityservice.data.SecurityRepository;
 import com.tradeai.securityservice.datamodel.Security;
+import com.tradeai.securityservice.dto.SecurityDTO;
 
 @Service
 public class SecurityServiceImpl implements SecurityService {
@@ -15,11 +17,15 @@ public class SecurityServiceImpl implements SecurityService {
 	private SecurityRepository repository; 
 
 	@Override
-	public Security getSecurity(String securityId) {
+	public SecurityDTO getSecurity(String securityId) {
 		// TODO Auto-generated method stub
 		
 		Optional<Security> optional =  repository.findById(securityId);
-		return optional.get();
+		
+		ModelMapper mapper = new ModelMapper();
+		SecurityDTO dto = mapper.map(optional, SecurityDTO.class);
+		
+		return dto;
 	}
 
 }
