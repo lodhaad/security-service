@@ -21,9 +21,14 @@ public class SecurityController {
 	@Autowired
 	private SecurityService service; 
 	
+	@GetMapping (path = "/health")
 	
-	@GetMapping(path = "/{securityId}" , consumes = MediaType.APPLICATION_JSON_VALUE , 
-			produces =  MediaType.APPLICATION_JSON_VALUE )
+	public String gethealth () {
+		return "health good ";
+	}
+	
+	
+	@GetMapping(path = "/{securityId}" )
 	public ResponseEntity<SecurityResponse> getSecurity (@PathVariable String securityId) {
 		
 		SecurityResponse response = getFromDB(securityId);

@@ -18,12 +18,15 @@ public class SecurityServiceImpl implements SecurityService {
 
 	@Override
 	public SecurityDTO getSecurity(String securityId) {
-		// TODO Auto-generated method stub
+
+
 		
 		Optional<Security> optional =  repository.findById(securityId);
 		
+		
+		
 		ModelMapper mapper = new ModelMapper();
-		SecurityDTO dto = mapper.map(optional, SecurityDTO.class);
+		SecurityDTO dto = mapper.map(optional.get(), SecurityDTO.class);
 		
 		return dto;
 	}

@@ -28,11 +28,13 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		
+		<!--  
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
-		
+		-->
 		
 		
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
@@ -59,12 +61,15 @@
 			<artifactId>hibernate-entitymanager</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		
+		<!--  
 
 		<dependency>
 			<groupId>com.fasterxml.jackson.dataformat</groupId>
 			<artifactId>jackson-dataformat-xml</artifactId>
 		</dependency>
 		
+		-->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
